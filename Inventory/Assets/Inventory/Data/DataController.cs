@@ -5,8 +5,6 @@ public class DataController : MonoBehaviour
 {
     private void Start()
     {
-        GlobalEventManager.SendStartDataController(transform);
-    }
 
-    
+    }
 }
