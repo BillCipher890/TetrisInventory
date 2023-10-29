@@ -32,6 +32,10 @@ public class BoxModel : ContainerModel, IDropHandler
         cell = cells[1, 1].GetComponent<CellModel>();
         cell.IsBusy = true;
         cell.DataId = 0;
+
+        cell = cells[2, 0].GetComponent<CellModel>();
+        cell.IsBusy = true;
+        cell.DataId = 1;
     }
 
     private IEnumerator BoxStartPlaceItems()
@@ -79,6 +83,8 @@ public class BoxModel : ContainerModel, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        eventData.pointerDrag.transform.SetParent(eventData.pointerDrag.transform.parent.parent.GetChild(0));
+        //eventData.pointerDrag.transform.SetParent(eventData.pointerDrag.transform.parent.parent.GetChild(0));
+        transform.parent.GetChild(0).GetComponent<InventoryModel>().MaybeBecomeRealFields(eventData.pointerDrag.transform);
+        GlobalEventManager.SendCellBusyChange();
     }
 }

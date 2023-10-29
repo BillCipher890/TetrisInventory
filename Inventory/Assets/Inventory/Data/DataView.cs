@@ -15,9 +15,12 @@ public class DataView : MonoBehaviour
         GlobalEventManager.OnStartDataModel -= OnStartDataModel;
     }
 
-    void OnModelPositionChanged(Vector3 position)
+    void OnModelPositionChanged(Vector3 position, int id)
     {
-        transform.position = position;
+        if (transform.GetComponent<DataModel>()?.Id == id)
+        {
+            transform.position = position;
+        }
     }
 
     void OnStartDataModel(Sprite sprite)

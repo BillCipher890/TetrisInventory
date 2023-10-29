@@ -7,4 +7,6 @@ public class DataController : MonoBehaviour
     {
         GlobalEventManager.SendStartDataController(transform);
     }
+
+    
 }

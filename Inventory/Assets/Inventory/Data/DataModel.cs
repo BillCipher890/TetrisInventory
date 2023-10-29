@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public int Id;
     public string Name;
@@ -11,7 +11,7 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Sprite Sprite;
     public Vector2 Size;
 
-    [HideInInspector]public Vector3 Position;
+    public Vector3 Position;
     private Vector3 _offset;
 
     private void Start()
@@ -39,7 +39,7 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnDrag(PointerEventData eventData)
     {
         Position = Input.mousePosition + _offset;
-        GlobalEventManager.SendModelPositionChanged(Position);
+        GlobalEventManager.SendModelPositionChanged(Position, Id);
 
         var RectTransform = transform.GetComponent<RectTransform>();
         var leftUpCornerPosition = new Vector3(
@@ -64,5 +64,11 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             transform.parent.parent.parent.GetChild(1).GetComponent<BoxModel>().PlaceItem(transform);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        transform.SetParent(eventData.pointerDrag.transform.parent.parent.GetChild(0));
+        StartCoroutine(TakeBackIfNotInInventory());
     }
 }

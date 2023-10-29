@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Inventory\Container\Box\BoxModel.cs" />
+    <Compile Include="Assets\Inventory\Inventory.cs" />
     <Compile Include="Assets\Inventory\Data\DataView.cs" />
     <Compile Include="Assets\Inventory\Data\DataModel.cs" />
     <Compile Include="Assets\Inventory\Container\CellView.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Assets\Inventory\Common\GlobalEventManager.cs" />
     <Compile Include="Assets\Inventory\Container\CellModel.cs" />
     <Compile Include="Assets\Inventory\Data\DataController.cs" />
-    <Compile Include="Assets\Inventory\Inventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
