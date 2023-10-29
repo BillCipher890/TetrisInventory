@@ -34,6 +34,12 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         _offset = Position - Input.mousePosition;
         transform.GetComponent<Image>().raycastTarget = false;
+
+        var inventoryContainer = transform.parent.parent.GetChild(1);
+        for (int i = 0; i < inventoryContainer.childCount; i++)
+        {
+            inventoryContainer.GetChild(i).GetComponent<Image>().raycastTarget = false;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -53,6 +59,12 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.GetComponent<Image>().raycastTarget = true;
+
+        var inventoryContainer = transform.parent.parent.GetChild(1);
+        for (int i = 0; i < inventoryContainer.childCount; i++)
+        {
+            inventoryContainer.GetChild(i).GetComponent<Image>().raycastTarget = true;
+        }
 
         StartCoroutine(TakeBackIfNotInInventory());
     }

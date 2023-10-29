@@ -9,11 +9,11 @@ public class BoxModel : ContainerModel, IDropHandler
     {
         StartCoroutine(UseOnStart());
         StartCoroutine(FillRandomData());
-        StartCoroutine(BoxStartPlaceItems());
     }
 
     private IEnumerator FillRandomData()
     {
+        yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
 
@@ -86,70 +86,12 @@ public class BoxModel : ContainerModel, IDropHandler
                 continue;
             }
         }
-
-        /*cell = cells[0, 0].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 0;
-        cell = cells[0, 1].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 0;
-        cell = cells[1, 0].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 0;
-        cell = cells[1, 1].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 0;
-
-        cell = cells[2, 1].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 1;
-
-        cell = cells[2, 0].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 2;
-        cell = cells[3, 0].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 2;
-        cell = cells[4, 0].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 2;
-
-        cell = cells[0, 2].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[1, 2].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[2, 2].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[3, 2].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[4, 2].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[0, 3].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[1, 3].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[2, 3].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[3, 3].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;
-        cell = cells[4, 3].GetComponent<CellModel>();
-        cell.IsBusy = true;
-        cell.DataId = 3;*/
+        StartCoroutine(BoxStartPlaceItems());
     }
 
     private IEnumerator BoxStartPlaceItems()
     {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
+        yield return null;
 
         var inBoxContainer = transform.parent.GetChild(2).GetChild(0);
         for (int k = 0; k < inBoxContainer.childCount; k++)

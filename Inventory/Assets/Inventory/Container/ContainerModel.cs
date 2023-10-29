@@ -10,7 +10,7 @@ public class ContainerModel : MonoBehaviour
 
     public IEnumerator UseOnStart()
     {
-        yield return new WaitForEndOfFrame();
+        yield return null;
         cells = new Transform[columnsCount, rowsCount];
         for(int i = 0; i < rowsCount; i++)
         {
