@@ -17,7 +17,7 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private void Start()
     {
         GlobalEventManager.OnStartDataController += OnStartDataController;
-        GlobalEventManager.SendStartDataModel(Sprite);
+        GlobalEventManager.SendStartDataModel(Sprite, Id);
     }
 
     private void OnDestroy()
@@ -43,8 +43,8 @@ public class DataModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         var RectTransform = transform.GetComponent<RectTransform>();
         var leftUpCornerPosition = new Vector3(
-            transform.position.x - RectTransform.sizeDelta.x / 2,
-            transform.position.y + RectTransform.sizeDelta.y / 2,
+            transform.position.x - RectTransform.sizeDelta.x / 2f + 40,
+            transform.position.y + RectTransform.sizeDelta.y / 2f - 40,
             transform.position.z);
 
         GlobalEventManager.SendModelPositionChangedForCells(leftUpCornerPosition, transform.GetComponent<DataModel>());

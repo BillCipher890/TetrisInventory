@@ -6,7 +6,7 @@ public class GlobalEventManager : MonoBehaviour
 {
     public static event Action<Vector3, int> OnModelPositionChanged;
 
-    public static event Action<Sprite> OnStartDataModel;
+    public static event Action<Sprite, int> OnStartDataModel;
     public static event Action<Transform> OnStartDataController;
 
     public static event Action<Vector3, DataModel> OnModelPositionChangedForCells;
@@ -24,9 +24,9 @@ public class GlobalEventManager : MonoBehaviour
         OnModelPositionChangedForCells?.Invoke(position, model);
     }
 
-    public static void SendStartDataModel(Sprite sprite)
+    public static void SendStartDataModel(Sprite sprite, int id)
     {
-        OnStartDataModel?.Invoke(sprite);
+        OnStartDataModel?.Invoke(sprite, id);
     }
 
     public static void SendStartDataController(Transform transform)

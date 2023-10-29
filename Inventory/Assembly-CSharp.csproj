@@ -66,6 +66,7 @@
     <Compile Include="Assets\Inventory\Common\GlobalEventManager.cs" />
     <Compile Include="Assets\Inventory\Container\CellModel.cs" />
     <Compile Include="Assets\Inventory\Data\DataController.cs" />
+    <Compile Include="Assets\Inventory\Container\Box\BoxFiller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

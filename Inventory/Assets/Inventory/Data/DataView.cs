@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DataView : MonoBehaviour
 {
+    public Image image;
     void Start()
     {
         GlobalEventManager.OnModelPositionChanged += OnModelPositionChanged;
@@ -23,8 +25,11 @@ public class DataView : MonoBehaviour
         }
     }
 
-    void OnStartDataModel(Sprite sprite)
+    void OnStartDataModel(Sprite sprite, int id)
     {
-        transform.GetComponent<Image>().overrideSprite = sprite;
+        if (transform.GetComponent<DataModel>()?.Id == id)
+        {
+            transform.GetComponent<Image>().overrideSprite = sprite;
+        }
     }
 }
