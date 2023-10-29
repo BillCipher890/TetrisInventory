@@ -5066,7 +5066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 0}
+  m_AnchoredPosition: {x: -340, y: 0}
   m_SizeDelta: {x: 480, y: 880}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831784226
@@ -7496,7 +7496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 0}
+  m_AnchoredPosition: {x: 540, y: 0}
   m_SizeDelta: {x: 880, y: 880}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096330429
@@ -9186,6 +9186,7 @@ GameObject:
   - component: {fileID: 1269442374}
   - component: {fileID: 1269442376}
   - component: {fileID: 1269442375}
+  - component: {fileID: 1269442377}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -9214,7 +9215,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1728, y: 972}
+  m_SizeDelta: {x: 2000, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269442375
 MonoBehaviour:
@@ -9254,6 +9255,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269442373}
   m_CullTransparentMesh: 1
+--- !u!114 &1269442377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269442373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9441a36ad331954b9a7aa3ef44ad1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1304170853
 GameObject:
   m_ObjectHideFlags: 0
