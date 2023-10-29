@@ -56,9 +56,15 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Items\Data\DataModel.cs" />
-    <Compile Include="Assets\Items\Data\DataController.cs" />
-    <Compile Include="Assets\Items\Data\DataView.cs" />
+    <Compile Include="Assets\Container\Box\BoxModel.cs" />
+    <Compile Include="Assets\Data\DataView.cs" />
+    <Compile Include="Assets\Data\DataModel.cs" />
+    <Compile Include="Assets\Container\CellView.cs" />
+    <Compile Include="Assets\Container\Inventory\InventoryModel.cs" />
+    <Compile Include="Assets\Container\ContainerModel.cs" />
+    <Compile Include="Assets\Common\GlobalEventManager.cs" />
+    <Compile Include="Assets\Container\CellModel.cs" />
+    <Compile Include="Assets\Data\DataController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
